@@ -1,0 +1,442 @@
+[2021-05-21 18:01:49] local.ERROR: Call to undefined method App\Providers\AppServiceProvider::registerPolicies() {"exception":"[object] (Error(code: 0): Call to undefined method App\\Providers\\AppServiceProvider::registerPolicies() at /home/moja/Desktop/blog/app/Providers/AppServiceProvider.php:22)
+[stacktrace]
+#0 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): App\\Providers\\AppServiceProvider->boot()
+#1 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Container/Util.php(37): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#2 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#3 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#4 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Container/Container.php(596): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#5 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(867): Illuminate\\Container\\Container->call(Array)
+#6 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(850): Illuminate\\Foundation\\Application->bootProvider(Object(App\\Providers\\AppServiceProvider))
+#7 [internal function]: Illuminate\\Foundation\\Application->Illuminate\\Foundation\\{closure}(Object(App\\Providers\\AppServiceProvider), 21)
+#8 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(851): array_walk(Array, Object(Closure))
+#9 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/BootProviders.php(17): Illuminate\\Foundation\\Application->boot()
+#10 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(230): Illuminate\\Foundation\\Bootstrap\\BootProviders->bootstrap(Object(Illuminate\\Foundation\\Application))
+#11 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(151): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#12 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(135): Illuminate\\Foundation\\Http\\Kernel->bootstrap()
+#13 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(109): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#14 /home/moja/Desktop/blog/public/index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#15 /home/moja/Desktop/blog/server.php(21): require_once('/home/moja/Desk...')
+#16 {main}
+"} 
+[2021-05-21 18:03:32] local.ERROR: SQLSTATE[01000]: Warning: 1265 Data truncated for column 'id' at row 1 (SQL: insert into `oauth_clients` (`user_id`, `name`, `secret`, `provider`, `redirect`, `personal_access_client`, `password_client`, `revoked`, `id`, `updated_at`, `created_at`) values (?, Laravel Personal Access Client, BS1CSyB4Zj3AskHtDhREtAfsWt286uSyxCii3Bgn, ?, http://localhost, 1, 0, 0, 937c49ab-ca28-4e21-8a83-0ac3dc0dc404, 2021-05-21 18:03:32, 2021-05-21 18:03:32)) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 01000): SQLSTATE[01000]: Warning: 1265 Data truncated for column 'id' at row 1 (SQL: insert into `oauth_clients` (`user_id`, `name`, `secret`, `provider`, `redirect`, `personal_access_client`, `password_client`, `revoked`, `id`, `updated_at`, `created_at`) values (?, Laravel Personal Access Client, BS1CSyB4Zj3AskHtDhREtAfsWt286uSyxCii3Bgn, ?, http://localhost, 1, 0, 0, 937c49ab-ca28-4e21-8a83-0ac3dc0dc404, 2021-05-21 18:03:32, 2021-05-21 18:03:32)) at /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Database/Connection.php:671)
+[stacktrace]
+#0 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Database/Connection.php(631): Illuminate\\Database\\Connection->runQueryCallback('insert into `oa...', Array, Object(Closure))
+#1 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Database/Connection.php(465): Illuminate\\Database\\Connection->run('insert into `oa...', Array, Object(Closure))
+#2 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Database/Connection.php(417): Illuminate\\Database\\Connection->statement('insert into `oa...', Array)
+#3 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(2795): Illuminate\\Database\\Connection->insert('insert into `oa...', Array)
+#4 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(1422): Illuminate\\Database\\Query\\Builder->insert(Array)
+#5 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(878): Illuminate\\Database\\Eloquent\\Builder->__call('insert', Array)
+#6 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(730): Illuminate\\Database\\Eloquent\\Model->performInsert(Object(Illuminate\\Database\\Eloquent\\Builder))
+#7 /home/moja/Desktop/blog/vendor/laravel/passport/src/ClientRepository.php(126): Illuminate\\Database\\Eloquent\\Model->save()
+#8 /home/moja/Desktop/blog/vendor/laravel/passport/src/ClientRepository.php(141): Laravel\\Passport\\ClientRepository->create(NULL, 'Laravel Persona...', 'http://localhos...', NULL, true)
+#9 /home/moja/Desktop/blog/vendor/laravel/passport/src/Console/ClientCommand.php(67): Laravel\\Passport\\ClientRepository->createPersonalAccessClient(NULL, 'Laravel Persona...', 'http://localhos...')
+#10 /home/moja/Desktop/blog/vendor/laravel/passport/src/Console/ClientCommand.php(43): Laravel\\Passport\\Console\\ClientCommand->createPersonalClient(Object(Laravel\\Passport\\ClientRepository))
+#11 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Laravel\\Passport\\Console\\ClientCommand->handle(Object(Laravel\\Passport\\ClientRepository))
+#12 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Container/Util.php(37): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#13 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#14 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#15 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Container/Container.php(596): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#16 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Console/Command.php(134): Illuminate\\Container\\Container->call(Array)
+#17 /home/moja/Desktop/blog/vendor/symfony/console/Command/Command.php(256): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArrayInput), Object(Illuminate\\Console\\OutputStyle))
+#18 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Console/Command.php(121): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArrayInput), Object(Illuminate\\Console\\OutputStyle))
+#19 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Console/Concerns/CallsCommands.php(56): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArrayInput), Object(Illuminate\\Console\\OutputStyle))
+#20 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Console/Concerns/CallsCommands.php(28): Illuminate\\Console\\Command->runCommand('passport:client', Array, Object(Illuminate\\Console\\OutputStyle))
+#21 /home/moja/Desktop/blog/vendor/laravel/passport/src/Console/InstallCommand.php(42): Illuminate\\Console\\Command->call('passport:client', Array)
+#22 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Laravel\\Passport\\Console\\InstallCommand->handle()
+#23 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Container/Util.php(37): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#24 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#25 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#26 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Container/Container.php(596): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#27 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Console/Command.php(134): Illuminate\\Container\\Container->call(Array)
+#28 /home/moja/Desktop/blog/vendor/symfony/console/Command/Command.php(256): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#29 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Console/Command.php(121): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#30 /home/moja/Desktop/blog/vendor/symfony/console/Application.php(971): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#31 /home/moja/Desktop/blog/vendor/symfony/console/Application.php(290): Symfony\\Component\\Console\\Application->doRunCommand(Object(Laravel\\Passport\\Console\\InstallCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#32 /home/moja/Desktop/blog/vendor/symfony/console/Application.php(166): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#33 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Console/Application.php(93): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#34 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#35 /home/moja/Desktop/blog/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#36 {main}
+
+[previous exception] [object] (PDOException(code: 01000): SQLSTATE[01000]: Warning: 1265 Data truncated for column 'id' at row 1 at /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Database/Connection.php:464)
+[stacktrace]
+#0 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Database/Connection.php(464): PDOStatement->execute()
+#1 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Database/Connection.php(664): Illuminate\\Database\\Connection->Illuminate\\Database\\{closure}('insert into `oa...', Array)
+#2 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Database/Connection.php(631): Illuminate\\Database\\Connection->runQueryCallback('insert into `oa...', Array, Object(Closure))
+#3 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Database/Connection.php(465): Illuminate\\Database\\Connection->run('insert into `oa...', Array, Object(Closure))
+#4 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Database/Connection.php(417): Illuminate\\Database\\Connection->statement('insert into `oa...', Array)
+#5 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(2795): Illuminate\\Database\\Connection->insert('insert into `oa...', Array)
+#6 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(1422): Illuminate\\Database\\Query\\Builder->insert(Array)
+#7 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(878): Illuminate\\Database\\Eloquent\\Builder->__call('insert', Array)
+#8 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(730): Illuminate\\Database\\Eloquent\\Model->performInsert(Object(Illuminate\\Database\\Eloquent\\Builder))
+#9 /home/moja/Desktop/blog/vendor/laravel/passport/src/ClientRepository.php(126): Illuminate\\Database\\Eloquent\\Model->save()
+#10 /home/moja/Desktop/blog/vendor/laravel/passport/src/ClientRepository.php(141): Laravel\\Passport\\ClientRepository->create(NULL, 'Laravel Persona...', 'http://localhos...', NULL, true)
+#11 /home/moja/Desktop/blog/vendor/laravel/passport/src/Console/ClientCommand.php(67): Laravel\\Passport\\ClientRepository->createPersonalAccessClient(NULL, 'Laravel Persona...', 'http://localhos...')
+#12 /home/moja/Desktop/blog/vendor/laravel/passport/src/Console/ClientCommand.php(43): Laravel\\Passport\\Console\\ClientCommand->createPersonalClient(Object(Laravel\\Passport\\ClientRepository))
+#13 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Laravel\\Passport\\Console\\ClientCommand->handle(Object(Laravel\\Passport\\ClientRepository))
+#14 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Container/Util.php(37): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#15 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#16 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#17 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Container/Container.php(596): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#18 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Console/Command.php(134): Illuminate\\Container\\Container->call(Array)
+#19 /home/moja/Desktop/blog/vendor/symfony/console/Command/Command.php(256): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArrayInput), Object(Illuminate\\Console\\OutputStyle))
+#20 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Console/Command.php(121): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArrayInput), Object(Illuminate\\Console\\OutputStyle))
+#21 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Console/Concerns/CallsCommands.php(56): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArrayInput), Object(Illuminate\\Console\\OutputStyle))
+#22 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Console/Concerns/CallsCommands.php(28): Illuminate\\Console\\Command->runCommand('passport:client', Array, Object(Illuminate\\Console\\OutputStyle))
+#23 /home/moja/Desktop/blog/vendor/laravel/passport/src/Console/InstallCommand.php(42): Illuminate\\Console\\Command->call('passport:client', Array)
+#24 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Laravel\\Passport\\Console\\InstallCommand->handle()
+#25 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Container/Util.php(37): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#26 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#27 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#28 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Container/Container.php(596): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#29 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Console/Command.php(134): Illuminate\\Container\\Container->call(Array)
+#30 /home/moja/Desktop/blog/vendor/symfony/console/Command/Command.php(256): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#31 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Console/Command.php(121): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#32 /home/moja/Desktop/blog/vendor/symfony/console/Application.php(971): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#33 /home/moja/Desktop/blog/vendor/symfony/console/Application.php(290): Symfony\\Component\\Console\\Application->doRunCommand(Object(Laravel\\Passport\\Console\\InstallCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#34 /home/moja/Desktop/blog/vendor/symfony/console/Application.php(166): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#35 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Console/Application.php(93): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#36 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#37 /home/moja/Desktop/blog/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#38 {main}
+"} 
+[2021-05-22 15:57:33] local.ERROR: Undefined variable: router {"exception":"[object] (ErrorException(code: 0): Undefined variable: router at /home/moja/Desktop/blog/routes/api.php:27)
+[stacktrace]
+#0 /home/moja/Desktop/blog/routes/api.php(27): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(8, 'Undefined varia...', '/home/moja/Desk...', 27, Array)
+#1 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Routing/Router.php(415): Illuminate\\Routing\\RouteFileRegistrar->{closure}(Object(Illuminate\\Routing\\Router))
+#2 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Routing/Router.php(374): Illuminate\\Routing\\Router->loadRoutes(Object(Closure))
+#3 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(261): Illuminate\\Routing\\Router->group(Array, Object(Closure))
+#4 /home/moja/Desktop/blog/routes/api.php(34): Illuminate\\Support\\Facades\\Facade::__callStatic('group', Array)
+#5 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): require('/home/moja/Desk...')
+#6 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Routing/Router.php(417): Illuminate\\Routing\\RouteFileRegistrar->register('/home/moja/Desk...')
+#7 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Routing/Router.php(374): Illuminate\\Routing\\Router->loadRoutes('/home/moja/Desk...')
+#8 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(135): Illuminate\\Routing\\Router->group(Array, '/home/moja/Desk...')
+#9 /home/moja/Desktop/blog/app/Providers/RouteServiceProvider.php(78): Illuminate\\Routing\\RouteRegistrar->group('/home/moja/Desk...')
+#10 /home/moja/Desktop/blog/app/Providers/RouteServiceProvider.php(45): App\\Providers\\RouteServiceProvider->mapApiRoutes()
+#11 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): App\\Providers\\RouteServiceProvider->map()
+#12 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Container/Util.php(37): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#13 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#14 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#15 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Container/Container.php(596): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#16 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Foundation/Support/Providers/RouteServiceProvider.php(87): Illuminate\\Container\\Container->call(Array)
+#17 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Foundation/Support/Providers/RouteServiceProvider.php(36): Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider->loadRoutes()
+#18 /home/moja/Desktop/blog/app/Providers/RouteServiceProvider.php(35): Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider->boot()
+#19 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): App\\Providers\\RouteServiceProvider->boot()
+#20 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Container/Util.php(37): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#21 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#22 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#23 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Container/Container.php(596): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#24 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(867): Illuminate\\Container\\Container->call(Array)
+#25 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(850): Illuminate\\Foundation\\Application->bootProvider(Object(App\\Providers\\RouteServiceProvider))
+#26 [internal function]: Illuminate\\Foundation\\Application->Illuminate\\Foundation\\{closure}(Object(App\\Providers\\RouteServiceProvider), 24)
+#27 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(851): array_walk(Array, Object(Closure))
+#28 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/BootProviders.php(17): Illuminate\\Foundation\\Application->boot()
+#29 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(230): Illuminate\\Foundation\\Bootstrap\\BootProviders->bootstrap(Object(Illuminate\\Foundation\\Application))
+#30 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(151): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#31 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(135): Illuminate\\Foundation\\Http\\Kernel->bootstrap()
+#32 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(109): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#33 /home/moja/Desktop/blog/public/index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#34 /home/moja/Desktop/blog/server.php(21): require_once('/home/moja/Desk...')
+#35 {main}
+"} 
+[2021-05-22 15:57:58] local.ERROR: Undefined variable: router {"exception":"[object] (ErrorException(code: 0): Undefined variable: router at /home/moja/Desktop/blog/routes/api.php:27)
+[stacktrace]
+#0 /home/moja/Desktop/blog/routes/api.php(27): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(8, 'Undefined varia...', '/home/moja/Desk...', 27, Array)
+#1 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Routing/Router.php(415): Illuminate\\Routing\\RouteFileRegistrar->{closure}(Object(Illuminate\\Routing\\Router))
+#2 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Routing/Router.php(374): Illuminate\\Routing\\Router->loadRoutes(Object(Closure))
+#3 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(261): Illuminate\\Routing\\Router->group(Array, Object(Closure))
+#4 /home/moja/Desktop/blog/routes/api.php(34): Illuminate\\Support\\Facades\\Facade::__callStatic('group', Array)
+#5 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): require('/home/moja/Desk...')
+#6 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Routing/Router.php(417): Illuminate\\Routing\\RouteFileRegistrar->register('/home/moja/Desk...')
+#7 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Routing/Router.php(374): Illuminate\\Routing\\Router->loadRoutes('/home/moja/Desk...')
+#8 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(135): Illuminate\\Routing\\Router->group(Array, '/home/moja/Desk...')
+#9 /home/moja/Desktop/blog/app/Providers/RouteServiceProvider.php(78): Illuminate\\Routing\\RouteRegistrar->group('/home/moja/Desk...')
+#10 /home/moja/Desktop/blog/app/Providers/RouteServiceProvider.php(45): App\\Providers\\RouteServiceProvider->mapApiRoutes()
+#11 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): App\\Providers\\RouteServiceProvider->map()
+#12 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Container/Util.php(37): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#13 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#14 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#15 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Container/Container.php(596): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#16 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Foundation/Support/Providers/RouteServiceProvider.php(87): Illuminate\\Container\\Container->call(Array)
+#17 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Foundation/Support/Providers/RouteServiceProvider.php(36): Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider->loadRoutes()
+#18 /home/moja/Desktop/blog/app/Providers/RouteServiceProvider.php(35): Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider->boot()
+#19 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): App\\Providers\\RouteServiceProvider->boot()
+#20 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Container/Util.php(37): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#21 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#22 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#23 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Container/Container.php(596): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#24 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(867): Illuminate\\Container\\Container->call(Array)
+#25 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(850): Illuminate\\Foundation\\Application->bootProvider(Object(App\\Providers\\RouteServiceProvider))
+#26 [internal function]: Illuminate\\Foundation\\Application->Illuminate\\Foundation\\{closure}(Object(App\\Providers\\RouteServiceProvider), 24)
+#27 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(851): array_walk(Array, Object(Closure))
+#28 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/BootProviders.php(17): Illuminate\\Foundation\\Application->boot()
+#29 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(230): Illuminate\\Foundation\\Bootstrap\\BootProviders->bootstrap(Object(Illuminate\\Foundation\\Application))
+#30 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(151): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#31 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(135): Illuminate\\Foundation\\Http\\Kernel->bootstrap()
+#32 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(109): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#33 /home/moja/Desktop/blog/public/index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#34 /home/moja/Desktop/blog/server.php(21): require_once('/home/moja/Desk...')
+#35 {main}
+"} 
+[2021-05-22 16:48:21] local.ERROR: Undefined variable: router {"exception":"[object] (ErrorException(code: 0): Undefined variable: router at /home/moja/Desktop/blog/routes/api.php:27)
+[stacktrace]
+#0 /home/moja/Desktop/blog/routes/api.php(27): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(8, 'Undefined varia...', '/home/moja/Desk...', 27, Array)
+#1 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Routing/Router.php(415): Illuminate\\Routing\\RouteFileRegistrar->{closure}(Object(Illuminate\\Routing\\Router))
+#2 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Routing/Router.php(374): Illuminate\\Routing\\Router->loadRoutes(Object(Closure))
+#3 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(261): Illuminate\\Routing\\Router->group(Array, Object(Closure))
+#4 /home/moja/Desktop/blog/routes/api.php(34): Illuminate\\Support\\Facades\\Facade::__callStatic('group', Array)
+#5 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): require('/home/moja/Desk...')
+#6 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Routing/Router.php(417): Illuminate\\Routing\\RouteFileRegistrar->register('/home/moja/Desk...')
+#7 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Routing/Router.php(374): Illuminate\\Routing\\Router->loadRoutes('/home/moja/Desk...')
+#8 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(135): Illuminate\\Routing\\Router->group(Array, '/home/moja/Desk...')
+#9 /home/moja/Desktop/blog/app/Providers/RouteServiceProvider.php(78): Illuminate\\Routing\\RouteRegistrar->group('/home/moja/Desk...')
+#10 /home/moja/Desktop/blog/app/Providers/RouteServiceProvider.php(45): App\\Providers\\RouteServiceProvider->mapApiRoutes()
+#11 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): App\\Providers\\RouteServiceProvider->map()
+#12 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Container/Util.php(37): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#13 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#14 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#15 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Container/Container.php(596): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#16 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Foundation/Support/Providers/RouteServiceProvider.php(87): Illuminate\\Container\\Container->call(Array)
+#17 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Foundation/Support/Providers/RouteServiceProvider.php(36): Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider->loadRoutes()
+#18 /home/moja/Desktop/blog/app/Providers/RouteServiceProvider.php(35): Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider->boot()
+#19 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): App\\Providers\\RouteServiceProvider->boot()
+#20 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Container/Util.php(37): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#21 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#22 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#23 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Container/Container.php(596): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#24 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(867): Illuminate\\Container\\Container->call(Array)
+#25 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(850): Illuminate\\Foundation\\Application->bootProvider(Object(App\\Providers\\RouteServiceProvider))
+#26 [internal function]: Illuminate\\Foundation\\Application->Illuminate\\Foundation\\{closure}(Object(App\\Providers\\RouteServiceProvider), 24)
+#27 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(851): array_walk(Array, Object(Closure))
+#28 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/BootProviders.php(17): Illuminate\\Foundation\\Application->boot()
+#29 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(230): Illuminate\\Foundation\\Bootstrap\\BootProviders->bootstrap(Object(Illuminate\\Foundation\\Application))
+#30 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(310): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#31 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(127): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#32 /home/moja/Desktop/blog/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#33 {main}
+"} 
+[2021-05-25 11:31:52] local.ERROR: Command "make" is not defined.
+
+Did you mean one of these?
+    make:cast
+    make:channel
+    make:command
+    make:component
+    make:controller
+    make:event
+    make:exception
+    make:factory
+    make:job
+    make:listener
+    make:mail
+    make:middleware
+    make:migration
+    make:model
+    make:notification
+    make:observer
+    make:policy
+    make:provider
+    make:request
+    make:resource
+    make:rule
+    make:seeder
+    make:test {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"make\" is not defined.
+
+Did you mean one of these?
+    make:cast
+    make:channel
+    make:command
+    make:component
+    make:controller
+    make:event
+    make:exception
+    make:factory
+    make:job
+    make:listener
+    make:mail
+    make:middleware
+    make:migration
+    make:model
+    make:notification
+    make:observer
+    make:policy
+    make:provider
+    make:request
+    make:resource
+    make:rule
+    make:seeder
+    make:test at /home/moja/Desktop/blog/vendor/symfony/console/Application.php:675)
+[stacktrace]
+#0 /home/moja/Desktop/blog/vendor/symfony/console/Application.php(254): Symfony\\Component\\Console\\Application->find('make')
+#1 /home/moja/Desktop/blog/vendor/symfony/console/Application.php(166): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#2 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Console/Application.php(93): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 /home/moja/Desktop/blog/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2021-05-25 11:35:11] local.ERROR: Command "migrete" is not defined.
+
+Did you mean one of these?
+    migrate
+    migrate:fresh
+    migrate:install
+    migrate:refresh
+    migrate:reset
+    migrate:rollback
+    migrate:status {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"migrete\" is not defined.
+
+Did you mean one of these?
+    migrate
+    migrate:fresh
+    migrate:install
+    migrate:refresh
+    migrate:reset
+    migrate:rollback
+    migrate:status at /home/moja/Desktop/blog/vendor/symfony/console/Application.php:675)
+[stacktrace]
+#0 /home/moja/Desktop/blog/vendor/symfony/console/Application.php(254): Symfony\\Component\\Console\\Application->find('migrete')
+#1 /home/moja/Desktop/blog/vendor/symfony/console/Application.php(166): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#2 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Console/Application.php(93): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 /home/moja/Desktop/blog/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2021-05-25 11:46:05] local.ERROR: Class 'App\Http\Controllers\v1\Course' not found {"exception":"[object] (Error(code: 0): Class 'App\\Http\\Controllers\\v1\\Course' not found at /home/moja/Desktop/blog/app/Http/Controllers/v1/PostController.php:21)
+[stacktrace]
+#0 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(54): App\\Http\\Controllers\\v1\\PostController->index()
+#1 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('index', Array)
+#2 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Routing/Route.php(239): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\v1\\PostController), 'index')
+#3 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Routing/Route.php(196): Illuminate\\Routing\\Route->runController()
+#4 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Routing/Router.php(685): Illuminate\\Routing\\Route->run()
+#5 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(128): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#6 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(41): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#7 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#8 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(59): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#9 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Illuminate\\Routing\\Middleware\\ThrottleRequests->handle(Object(Illuminate\\Http\\Request), Object(Closure), 60, '1')
+#10 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(103): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#11 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Routing/Router.php(687): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#12 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Routing/Router.php(662): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#13 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Routing/Router.php(628): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#14 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Routing/Router.php(617): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#15 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(165): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#16 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(128): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#17 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#18 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#19 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#20 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#21 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#22 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#23 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php(63): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#24 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#25 /home/moja/Desktop/blog/vendor/fruitcake/laravel-cors/src/HandleCors.php(52): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#26 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Fruitcake\\Cors\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#27 /home/moja/Desktop/blog/vendor/fideloper/proxy/src/TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#28 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Fideloper\\Proxy\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#29 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(103): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#30 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(140): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#31 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(109): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#32 /home/moja/Desktop/blog/public/index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#33 /home/moja/Desktop/blog/server.php(21): require_once('/home/moja/Desk...')
+#34 {main}
+"} 
+[2021-05-25 17:37:13] local.ERROR: syntax error, unexpected 'return' (T_RETURN) {"exception":"[object] (ParseError(code: 0): syntax error, unexpected 'return' (T_RETURN) at /home/moja/Desktop/blog/app/Http/Controllers/v1/PostController.php:47)
+[stacktrace]
+#0 /home/moja/Desktop/blog/vendor/composer/ClassLoader.php(346): Composer\\Autoload\\includeFile('/home/moja/Desk...')
+#1 [internal function]: Composer\\Autoload\\ClassLoader->loadClass('App\\\\Http\\\\Contro...')
+#2 [internal function]: spl_autoload_call('App\\\\Http\\\\Contro...')
+#3 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Container/Container.php(809): ReflectionClass->__construct('App\\\\Http\\\\Contro...')
+#4 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Container/Container.php(691): Illuminate\\Container\\Container->build('App\\\\Http\\\\Contro...')
+#5 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(796): Illuminate\\Container\\Container->resolve('App\\\\Http\\\\Contro...', Array, true)
+#6 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Container/Container.php(637): Illuminate\\Foundation\\Application->resolve('App\\\\Http\\\\Contro...', Array)
+#7 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(781): Illuminate\\Container\\Container->make('App\\\\Http\\\\Contro...', Array)
+#8 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Routing/Route.php(253): Illuminate\\Foundation\\Application->make('App\\\\Http\\\\Contro...')
+#9 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Routing/Route.php(970): Illuminate\\Routing\\Route->getController()
+#10 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Routing/Route.php(931): Illuminate\\Routing\\Route->controllerMiddleware()
+#11 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Routing/Router.php(702): Illuminate\\Routing\\Route->gatherMiddleware()
+#12 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Routing/Router.php(678): Illuminate\\Routing\\Router->gatherRouteMiddleware(Object(Illuminate\\Routing\\Route))
+#13 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Routing/Router.php(662): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#14 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Routing/Router.php(628): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#15 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Routing/Router.php(617): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#16 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(165): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#17 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(128): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#18 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#19 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#20 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#21 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#22 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#23 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#24 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php(63): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#25 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#26 /home/moja/Desktop/blog/vendor/fruitcake/laravel-cors/src/HandleCors.php(52): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#27 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Fruitcake\\Cors\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#28 /home/moja/Desktop/blog/vendor/fideloper/proxy/src/TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#29 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Fideloper\\Proxy\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#30 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(103): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#31 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(140): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#32 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(109): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#33 /home/moja/Desktop/blog/public/index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#34 /home/moja/Desktop/blog/server.php(21): require_once('/home/moja/Desk...')
+#35 {main}
+"} 
+[2021-05-25 18:13:43] local.ERROR: Call to a member function isJson() on string {"userId":1,"exception":"[object] (Error(code: 0): Call to a member function isJson() on string at /home/moja/Desktop/blog/app/Http/Controllers/v1/PostController.php:79)
+[stacktrace]
+#0 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(54): App\\Http\\Controllers\\v1\\PostController->update('-1')
+#1 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('update', Array)
+#2 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Routing/Route.php(239): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\v1\\PostController), 'update')
+#3 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Routing/Route.php(196): Illuminate\\Routing\\Route->runController()
+#4 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Routing/Router.php(685): Illuminate\\Routing\\Route->run()
+#5 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(128): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#6 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(41): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#7 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#8 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(59): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#9 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Illuminate\\Routing\\Middleware\\ThrottleRequests->handle(Object(Illuminate\\Http\\Request), Object(Closure), 60, '1')
+#10 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Auth/Middleware/Authenticate.php(44): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#11 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Illuminate\\Auth\\Middleware\\Authenticate->handle(Object(Illuminate\\Http\\Request), Object(Closure), 'api')
+#12 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(103): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#13 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Routing/Router.php(687): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#14 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Routing/Router.php(662): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#15 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Routing/Router.php(628): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#16 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Routing/Router.php(617): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#17 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(165): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#18 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(128): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#19 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#20 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#21 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#22 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#23 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#24 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#25 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php(63): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#26 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#27 /home/moja/Desktop/blog/vendor/fruitcake/laravel-cors/src/HandleCors.php(52): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#28 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Fruitcake\\Cors\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#29 /home/moja/Desktop/blog/vendor/fideloper/proxy/src/TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#30 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Fideloper\\Proxy\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#31 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(103): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#32 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(140): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#33 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(109): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#34 /home/moja/Desktop/blog/public/index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#35 /home/moja/Desktop/blog/server.php(21): require_once('/home/moja/Desk...')
+#36 {main}
+"} 
+[2021-05-25 18:38:08] local.ERROR: Class 'Laravel\Passport\Passport' not found {"exception":"[object] (Error(code: 0): Class 'Laravel\\Passport\\Passport' not found at /home/moja/Desktop/blog/app/Providers/AppServiceProvider.php:27)
+[stacktrace]
+#0 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): App\\Providers\\AppServiceProvider->boot()
+#1 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Container/Util.php(37): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#2 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#3 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#4 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Container/Container.php(596): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#5 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(867): Illuminate\\Container\\Container->call(Array)
+#6 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(850): Illuminate\\Foundation\\Application->bootProvider(Object(App\\Providers\\AppServiceProvider))
+#7 [internal function]: Illuminate\\Foundation\\Application->Illuminate\\Foundation\\{closure}(Object(App\\Providers\\AppServiceProvider), 20)
+#8 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(851): array_walk(Array, Object(Closure))
+#9 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/BootProviders.php(17): Illuminate\\Foundation\\Application->boot()
+#10 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(230): Illuminate\\Foundation\\Bootstrap\\BootProviders->bootstrap(Object(Illuminate\\Foundation\\Application))
+#11 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(310): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#12 /home/moja/Desktop/blog/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(127): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#13 /home/moja/Desktop/blog/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#14 {main}
+"} 
+[2021-05-25 18:38:49] local.ERROR: Trait 'Laravel\Passport\HasApiTokens' not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait 'Laravel\\Passport\\HasApiTokens' not found at /home/moja/Desktop/blog/app/User.php:12)
+[stacktrace]
+#0 {main}
+"} 
