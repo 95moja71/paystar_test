@@ -13,6 +13,15 @@ use Illuminate\Support\Facades\Validator;
 class PostController extends Controller
 {
 
+    public function __construct()
+    {
+
+        $this->middleware('can:show-post')->only(['index']);
+        $this->middleware('can:create-post')->only(['store']);
+        $this->middleware('can:update-post')->only(['update']);
+        $this->middleware('can:delete-post')->only(['delete']);
+    }
+
     public function index()
 
     {

@@ -65,6 +65,7 @@ class User extends Authenticatable
 
     public function hasPermission($permission)
     {
+
         return $this->permissions->contains('name' , $permission->name) || $this->hasRole($permission->roles);
     }
 }
