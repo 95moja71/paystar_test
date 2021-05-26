@@ -8,6 +8,7 @@ use App\Http\Resources\v1\UserResource;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 
 
@@ -18,10 +19,16 @@ class UserController extends Controller
     public function login(Request $request)
     {
 
-        $validator = $this->validate($request, [
+        $validator = Validator::make($request->all(), [
             'email' => 'required|exists:users|string',
             'password' => 'required|string'
         ]);
+        if ($validator->fails()) {
+            return response()->json([
+                'data' =>
+                    $validator->errors()
+            ], 422);
+        }
 
         $user = User::whereEmail($request['email'])->firstOrFail();
 
@@ -48,30 +55,29 @@ class UserController extends Controller
                 'data' => 'اطلاعات صحیح نیست'
             ], 403);
         }
-
-
     }
 
-    public
-    function register(Request $request)
+    public function register(Request $request)
     {
-        $validator = $this->validate(
-            $request, [
+        $validator = Validator::make(
+            $request->all(), [
                 'name' => 'required|string|max:255',
                 'email' => 'required|string|email|max:255|unique:users',
                 'password' => 'required|string|min:6',
             ]
         );
-        /*    if ($validator->fails()) {
-                return response()->json([
-                    'data' =>
-                        $validator->errors()
-                ], 403);
-            }*/
+
+        if ($validator->fails()) {
+            return response()->json([
+                'data' =>
+                    $validator->errors()
+            ], 403);
+        }
+
         $user = User::create([
-                'name' => $validator['name'],
-                'email' => $validator['email'],
-                'password' => Hash::make($validator['password']),
+                'name' => $request->name,
+                'email' => $request->email,
+                'password' => Hash::make($request->password),
             ]
         );
 
